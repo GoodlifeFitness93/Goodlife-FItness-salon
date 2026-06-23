@@ -370,7 +370,7 @@ function App() {
 
   return (
     <main className="min-h-screen bg-goodlife-bg pb-24 text-white">
-      <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-4 py-5 sm:px-6 sm:py-8">
+      <div className="mx-auto flex min-h-fit sm:min-h-screen w-full max-w-4xl flex-col px-4 py-5 sm:px-6 sm:py-8">
         <AnimatePresence mode="wait" initial={false}>
           {activeTab === 'entry' ? (
             <motion.div
