@@ -369,13 +369,13 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen bg-goodlife-bg text-white pb-0 sm:pb-24">
-      <div className="mx-auto flex min-h-0 sm:min-h-screen w-full max-w-4xl flex-col px-4 pt-5 pb-0 sm:px-6 sm:py-8">
+    <main className="min-h-screen bg-goodlife-bg pb-24 text-white">
+      <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-4 py-5 sm:px-6 sm:py-8">
         <AnimatePresence mode="wait" initial={false}>
           {activeTab === 'entry' ? (
             <motion.div
               key="entry"
-              className="flex flex-col sm:flex-1"
+              className="flex flex-1 flex-col"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -394,7 +394,7 @@ function App() {
           ) : (
             <motion.div
               key="dashboard"
-              className="flex flex-col sm:flex-1"
+              className="flex flex-1 flex-col"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -479,7 +479,7 @@ type EntryScreenProps = {
 
 function EntryScreen({ errors, form, hasCustomService, isSaving, onSubmit, toggleService, updateForm }: EntryScreenProps) {
   return (
-    <section className="flex flex-col sm:flex-1 gap-5">
+    <section className="flex flex-1 flex-col gap-5">
       <header className="pt-2">
         <p className="text-3xl font-black tracking-normal text-white sm:text-4xl">
           <span className="text-goodlife-accent">Goodlife</span> Salon
@@ -487,7 +487,7 @@ function EntryScreen({ errors, form, hasCustomService, isSaving, onSubmit, toggl
         <h1 className="mt-1 text-base font-medium text-white/60">New Client Entry</h1>
       </header>
 
-      <form className="rounded-xl border border-white/10 bg-goodlife-card p-4 pb-[88px] shadow-premium sm:p-6 sm:pb-6" onSubmit={onSubmit}>
+      <form className="rounded-xl border border-white/10 bg-goodlife-card p-4 shadow-premium sm:p-6" onSubmit={onSubmit}>
         <div className="grid gap-4">
           <Field label="Client Name" error={errors.clientName}>
             <input
@@ -702,7 +702,7 @@ function DashboardScreen({
 
   if (shouldGateDashboard && !isDashboardUnlocked) {
     return (
-      <section className="flex flex-1 flex-col justify-center gap-5 pb-[88px] sm:pb-0">
+      <section className="flex flex-1 flex-col justify-center gap-5">
         <header>
           <p className="text-3xl font-black tracking-normal text-white sm:text-4xl">
             <span className="text-goodlife-accent">Goodlife</span> Salon
@@ -731,7 +731,7 @@ function DashboardScreen({
   }
 
   return (
-    <section className="flex flex-col sm:flex-1 gap-5 pb-[88px] sm:pb-0">
+    <section className="flex flex-1 flex-col gap-5">
       <header className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-3xl font-black tracking-normal text-white sm:text-4xl">
