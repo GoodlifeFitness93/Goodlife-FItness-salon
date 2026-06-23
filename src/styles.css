@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+  background: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #0a0a0a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+@layer components {
+  .input {
+    @apply h-11 w-full rounded-lg border border-white/10 bg-[#111] px-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-goodlife-accent focus:ring-2 focus:ring-goodlife-accent/30;
+  }
+
+  .service-chip {
+    @apply flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-white/10 bg-[#111] px-3 py-2 text-sm font-semibold text-white/70 transition;
+  }
+
+  .service-chip-active {
+    @apply border-goodlife-accent bg-goodlife-accent/10 text-white;
+  }
+
+  .chip-box {
+    @apply grid h-5 w-5 shrink-0 place-items-center rounded border border-white/20 bg-black/20;
+  }
+
+  .service-chip-active .chip-box {
+    @apply border-goodlife-accent bg-goodlife-accent;
+  }
+
+  .service-chip-active .chip-box::after {
+    content: "";
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) translateY(-1px);
+  }
+
+  .payment-toggle {
+    @apply min-h-11 rounded-lg border border-white/10 bg-[#111] px-2 text-sm font-black text-white/60 transition hover:border-goodlife-accent/70;
+  }
+
+  .payment-toggle-active {
+    @apply border-goodlife-accent bg-goodlife-accent text-white;
+  }
+
+  .month-arrow {
+    @apply grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-white/10 bg-[#111] text-xl font-black text-goodlife-accent transition hover:border-goodlife-accent/70;
+  }
+
+  .tab-button {
+    @apply flex h-12 items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#1a1a1a] text-sm font-black text-white/60 transition;
+  }
+
+  .tab-button-active {
+    @apply border-goodlife-accent bg-goodlife-accent text-white;
+  }
+}
